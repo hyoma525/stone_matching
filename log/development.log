@@ -5,3 +5,826 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 29ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 5094)
 
 
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20221025124856)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221025124856"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-10-26 11:55:44.693208"], ["updated_at", "2022-10-26 11:55:44.693208"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2022-10-26 21:20:41 +0900
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ohkubohyoma/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ohkubohyoma/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.0ms | Allocations: 533)
+Completed 200 OK in 19ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 3822)
+
+
+Started GET "/login" for ::1 at 2022-10-26 21:20:51 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started GET "/users" for ::1 at 2022-10-26 21:21:39 +0900
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/index" for ::1 at 2022-10-26 21:21:49 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+Started GET "/" for ::1 at 2022-11-28 20:58:21 +0900
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.slim within layouts/application
+  Rendered posts/index.html.slim within layouts/application (Duration: 16.3ms | Allocations: 10109)
+  Rendered layout layouts/application.html.erb (Duration: 1192.7ms | Allocations: 148441)
+Completed 200 OK in 1208ms (Views: 1197.8ms | ActiveRecord: 0.0ms | Allocations: 151929)
+
+
+Started GET "/" for ::1 at 2022-11-28 21:03:01 +0900
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 10.9ms | Allocations: 1251)
+  Rendered layout layouts/application.html.erb (Duration: 138.9ms | Allocations: 53861)
+Completed 200 OK in 154ms (Views: 143.0ms | ActiveRecord: 0.0ms | Allocations: 57349)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-11-28 21:04:21 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 255)
+  Rendered devise/shared/_links.html.erb (Duration: 1.9ms | Allocations: 617)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 326.2ms | Allocations: 8716)
+  Rendered layout layouts/application.html.erb (Duration: 341.1ms | Allocations: 15569)
+Completed 200 OK in 357ms (Views: 342.8ms | ActiveRecord: 0.5ms | Allocations: 22918)
+
+
+Started GET "/" for ::1 at 2022-11-28 21:13:47 +0900
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.slim within layouts/application
+  Rendered posts/index.html.slim within layouts/application (Duration: 72.0ms | Allocations: 19417)
+  Rendered layout layouts/application.html.erb (Duration: 72.5ms | Allocations: 19516)
+Completed 500 Internal Server Error in 92ms (Allocations: 20380)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check div
+  h1 ログインアプリ
+
+  - if user_signed_in?  <!-- ユーザーがログインしているか調べる -->
+  <!-- ユーザーがログインしていた時の処理 -->
+
+  h4 メールアドレス： = current_user.email
+  li = link_to "ログアウト", destroy_user_session_path, method: :delete <!-- ログアウトをする -->
+  - else
+  <!-- ユーザーがログインしていなかった時の処理 -->
+  h2 現在ログインしていません
+  li = link_to "ログイン", new_user_session_path, class: 'post' <!-- ログイン画面に移行する -->
+  li = link_to "新規登録", new_user_registration_path, class: 'post' <!-- 新規登録画面に移行する -->
+):
+1:    div
+2:      h1 ログインアプリ
+3:    
+4:      - if user_signed_in?  <!-- ユーザーがログインしているか調べる -->
+5:      <!-- ユーザーがログインしていた時の処理 -->
+6:    
+7:      h4 メールアドレス： = current_user.email
+8:      li = link_to "ログアウト", destroy_user_session_path, method: :delete <!-- ログアウトをする -->
+9:      - else
+10:      <!-- ユーザーがログインしていなかった時の処理 -->
+11:      h2 現在ログインしていません
+12:      li = link_to "ログイン", new_user_session_path, class: 'post' <!-- ログイン画面に移行する -->
+13:      li = link_to "新規登録", new_user_registration_path, class: 'post' <!-- 新規登録画面に移行する -->
+  
+app/views/posts/index.html.slim:4: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:8: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:9: syntax error, unexpected `else', expecting ')'
+app/views/posts/index.html.slim:12: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:13: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:15: syntax error, unexpected `end', expecting ')'
+app/views/posts/index.html.slim:4: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:8: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:9: syntax error, unexpected `else', expecting ')'
+app/views/posts/index.html.slim:12: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:13: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:15: syntax error, unexpected `end', expecting ')'
+app/views/posts/index.html.slim:4: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:8: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:9: syntax error, unexpected `else', expecting ')'
+app/views/posts/index.html.slim:12: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:13: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:15: syntax error, unexpected `end', expecting ')'
+app/views/posts/index.html.slim:4: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:8: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:9: syntax error, unexpected `else', expecting ')'
+app/views/posts/index.html.slim:12: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:13: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:15: syntax error, unexpected `end', expecting ')'
+app/views/posts/index.html.slim:4: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:8: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:9: syntax error, unexpected `else', expecting ')'
+app/views/posts/index.html.slim:12: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:13: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:15: syntax error, unexpected `end', expecting ')'
+app/views/posts/index.html.slim:4: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:8: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:9: syntax error, unexpected `else', expecting ')'
+app/views/posts/index.html.slim:12: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:13: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:15: syntax error, unexpected `end', expecting ')'
+Started GET "/" for ::1 at 2022-11-29 21:29:40 +0900
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.slim within layouts/application
+  Rendered posts/index.html.slim within layouts/application (Duration: 18.4ms | Allocations: 13536)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 13647)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms | Allocations: 17074)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check div
+  h1 ログインアプリ
+
+  - if user_signed_in?  <!-- ユーザーがログインしているか調べる -->
+  <!-- ユーザーがログインしていた時の処理 -->
+
+    h4 メールアドレス： = current_user.email
+    li = link_to "ログアウト", destroy_user_session_path, method: :delete <!-- ログアウトをする -->
+  - else
+  <!-- ユーザーがログインしていなかった時の処理 -->
+    h2 現在ログインしていません
+    li = link_to "ログイン", new_user_session_path, class: 'post' <!-- ログイン画面に移行する -->
+    li = link_to "新規登録", new_user_registration_path, class: 'post' <!-- 新規登録画面に移行する -->
+):
+1:    div
+2:      h1 ログインアプリ
+3:    
+4:      - if user_signed_in?  <!-- ユーザーがログインしているか調べる -->
+5:      <!-- ユーザーがログインしていた時の処理 -->
+6:    
+7:        h4 メールアドレス： = current_user.email
+8:        li = link_to "ログアウト", destroy_user_session_path, method: :delete <!-- ログアウトをする -->
+9:      - else
+10:      <!-- ユーザーがログインしていなかった時の処理 -->
+11:        h2 現在ログインしていません
+12:        li = link_to "ログイン", new_user_session_path, class: 'post' <!-- ログイン画面に移行する -->
+13:        li = link_to "新規登録", new_user_registration_path, class: 'post' <!-- 新規登録画面に移行する -->
+  
+app/views/posts/index.html.slim:4: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:8: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:9: syntax error, unexpected `else', expecting ')'
+app/views/posts/index.html.slim:12: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:13: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:15: syntax error, unexpected `end', expecting ')'
+app/views/posts/index.html.slim:4: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:8: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:9: syntax error, unexpected `else', expecting ')'
+app/views/posts/index.html.slim:12: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:13: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:15: syntax error, unexpected `end', expecting ')'
+app/views/posts/index.html.slim:4: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:8: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:9: syntax error, unexpected `else', expecting ')'
+app/views/posts/index.html.slim:12: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:13: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:15: syntax error, unexpected `end', expecting ')'
+app/views/posts/index.html.slim:4: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:8: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:9: syntax error, unexpected `else', expecting ')'
+app/views/posts/index.html.slim:12: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:13: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:15: syntax error, unexpected `end', expecting ')'
+app/views/posts/index.html.slim:4: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:8: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:9: syntax error, unexpected `else', expecting ')'
+app/views/posts/index.html.slim:12: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:13: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:15: syntax error, unexpected `end', expecting ')'
+app/views/posts/index.html.slim:4: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:8: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:9: syntax error, unexpected `else', expecting ')'
+app/views/posts/index.html.slim:12: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:13: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:15: syntax error, unexpected `end', expecting ')'
+Started GET "/" for ::1 at 2022-11-29 21:29:42 +0900
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.slim within layouts/application
+  Rendered posts/index.html.slim within layouts/application (Duration: 5.1ms | Allocations: 4948)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 5029)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 5882)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check div
+  h1 ログインアプリ
+
+  - if user_signed_in?  <!-- ユーザーがログインしているか調べる -->
+  <!-- ユーザーがログインしていた時の処理 -->
+
+    h4 メールアドレス： = current_user.email
+    li = link_to "ログアウト", destroy_user_session_path, method: :delete <!-- ログアウトをする -->
+  - else
+  <!-- ユーザーがログインしていなかった時の処理 -->
+    h2 現在ログインしていません
+    li = link_to "ログイン", new_user_session_path, class: 'post' <!-- ログイン画面に移行する -->
+    li = link_to "新規登録", new_user_registration_path, class: 'post' <!-- 新規登録画面に移行する -->
+):
+1:    div
+2:      h1 ログインアプリ
+3:    
+4:      - if user_signed_in?  <!-- ユーザーがログインしているか調べる -->
+5:      <!-- ユーザーがログインしていた時の処理 -->
+6:    
+7:        h4 メールアドレス： = current_user.email
+8:        li = link_to "ログアウト", destroy_user_session_path, method: :delete <!-- ログアウトをする -->
+9:      - else
+10:      <!-- ユーザーがログインしていなかった時の処理 -->
+11:        h2 現在ログインしていません
+12:        li = link_to "ログイン", new_user_session_path, class: 'post' <!-- ログイン画面に移行する -->
+13:        li = link_to "新規登録", new_user_registration_path, class: 'post' <!-- 新規登録画面に移行する -->
+  
+app/views/posts/index.html.slim:4: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:8: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:9: syntax error, unexpected `else', expecting ')'
+app/views/posts/index.html.slim:12: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:13: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:15: syntax error, unexpected `end', expecting ')'
+app/views/posts/index.html.slim:4: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:8: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:9: syntax error, unexpected `else', expecting ')'
+app/views/posts/index.html.slim:12: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:13: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:15: syntax error, unexpected `end', expecting ')'
+app/views/posts/index.html.slim:4: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:8: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:9: syntax error, unexpected `else', expecting ')'
+app/views/posts/index.html.slim:12: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:13: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:15: syntax error, unexpected `end', expecting ')'
+app/views/posts/index.html.slim:4: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:8: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:9: syntax error, unexpected `else', expecting ')'
+app/views/posts/index.html.slim:12: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:13: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:15: syntax error, unexpected `end', expecting ')'
+app/views/posts/index.html.slim:4: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:8: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:9: syntax error, unexpected `else', expecting ')'
+app/views/posts/index.html.slim:12: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:13: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:15: syntax error, unexpected `end', expecting ')'
+app/views/posts/index.html.slim:4: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:8: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:9: syntax error, unexpected `else', expecting ')'
+app/views/posts/index.html.slim:12: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:13: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:15: syntax error, unexpected `end', expecting ')'
+Started GET "/" for ::1 at 2022-11-29 21:31:36 +0900
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.slim within layouts/application
+  Rendered posts/index.html.slim within layouts/application (Duration: 17.7ms | Allocations: 4783)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 4873)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms | Allocations: 5697)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+  h1 ログインアプリ
+
+  - if user_signed_in?  <!-- ユーザーがログインしているか調べる -->
+  <!-- ユーザーがログインしていた時の処理 -->
+
+    h4 メールアドレス： = current_user.email
+    li = link_to "ログアウト", destroy_user_session_path, method: :delete <!-- ログアウトをする -->
+  - else
+  <!-- ユーザーがログインしていなかった時の処理 -->
+    h2 現在ログインしていません
+    li = link_to "ログイン", new_user_session_path, class: 'post' <!-- ログイン画面に移行する -->
+    li = link_to "新規登録", new_user_registration_path, class: 'post' <!-- 新規登録画面に移行する -->
+):
+1:    
+2:      h1 ログインアプリ
+3:    
+4:      - if user_signed_in?  <!-- ユーザーがログインしているか調べる -->
+5:      <!-- ユーザーがログインしていた時の処理 -->
+6:    
+7:        h4 メールアドレス： = current_user.email
+8:        li = link_to "ログアウト", destroy_user_session_path, method: :delete <!-- ログアウトをする -->
+9:      - else
+10:      <!-- ユーザーがログインしていなかった時の処理 -->
+11:        h2 現在ログインしていません
+12:        li = link_to "ログイン", new_user_session_path, class: 'post' <!-- ログイン画面に移行する -->
+13:        li = link_to "新規登録", new_user_registration_path, class: 'post' <!-- 新規登録画面に移行する -->
+  
+app/views/posts/index.html.slim:4: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:8: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:9: syntax error, unexpected `else', expecting ')'
+app/views/posts/index.html.slim:12: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:13: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:15: syntax error, unexpected `end', expecting ')'
+app/views/posts/index.html.slim:4: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:8: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:9: syntax error, unexpected `else', expecting ')'
+app/views/posts/index.html.slim:12: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:13: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:15: syntax error, unexpected `end', expecting ')'
+app/views/posts/index.html.slim:4: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:8: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:9: syntax error, unexpected `else', expecting ')'
+app/views/posts/index.html.slim:12: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:13: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:15: syntax error, unexpected `end', expecting ')'
+app/views/posts/index.html.slim:4: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:8: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:9: syntax error, unexpected `else', expecting ')'
+app/views/posts/index.html.slim:12: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:13: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:15: syntax error, unexpected `end', expecting ')'
+app/views/posts/index.html.slim:4: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:8: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:9: syntax error, unexpected `else', expecting ')'
+app/views/posts/index.html.slim:12: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:13: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:15: syntax error, unexpected `end', expecting ')'
+app/views/posts/index.html.slim:4: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:8: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:9: syntax error, unexpected `else', expecting ')'
+app/views/posts/index.html.slim:12: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:13: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/posts/index.html.slim:15: syntax error, unexpected `end', expecting ')'
+Started GET "/" for ::1 at 2022-11-29 21:32:17 +0900
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.slim within layouts/application
+  Rendered posts/index.html.slim within layouts/application (Duration: 5.9ms | Allocations: 2321)
+  Rendered layout layouts/application.html.erb (Duration: 177.2ms | Allocations: 54993)
+Completed 200 OK in 181ms (Views: 180.0ms | ActiveRecord: 0.0ms | Allocations: 55909)
+
+
+Started GET "/" for ::1 at 2022-11-29 21:32:26 +0900
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.slim within layouts/application
+  Rendered posts/index.html.slim within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 6791)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 7076)
+
+
+Started GET "/" for ::1 at 2022-11-29 21:34:10 +0900
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 9.5ms | Allocations: 1243)
+  Rendered layout layouts/application.html.erb (Duration: 152.5ms | Allocations: 53950)
+Completed 200 OK in 165ms (Views: 156.2ms | ActiveRecord: 0.0ms | Allocations: 57391)
+
+
+Started GET "/" for ::1 at 2022-11-29 21:34:48 +0900
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 424)
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 7226)
+Completed 200 OK in 30ms (Views: 29.3ms | ActiveRecord: 0.0ms | Allocations: 7553)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-11-29 21:38:47 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.6ms | Allocations: 255)
+  Rendered devise/shared/_links.html.erb (Duration: 2.5ms | Allocations: 617)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 37.7ms | Allocations: 5285)
+  Rendered layout layouts/application.html.erb (Duration: 69.3ms | Allocations: 12062)
+Completed 200 OK in 121ms (Views: 76.2ms | ActiveRecord: 1.7ms | Allocations: 19435)
+
+
+Started POST "/users" for ::1 at 2022-11-29 21:38:58 +0900
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ninjawanko@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (2.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ninjawanko@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.4ms | Allocations: 625)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 79)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2500)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 9195)
+Completed 200 OK in 693ms (Views: 17.9ms | ActiveRecord: 3.3ms | Allocations: 18423)
+
+
+Started POST "/users" for ::1 at 2022-11-29 21:39:07 +0900
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ninjawanko@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ninjawanko@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 461)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2239)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 8829)
+Completed 200 OK in 314ms (Views: 16.3ms | ActiveRecord: 0.3ms | Allocations: 13872)
+
+
+Started POST "/users" for ::1 at 2022-11-29 21:39:09 +0900
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ninjawanko@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ninjawanko@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 461)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2239)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 8903)
+Completed 200 OK in 312ms (Views: 14.7ms | ActiveRecord: 0.3ms | Allocations: 13699)
+
+
+Started POST "/users" for ::1 at 2022-11-29 21:39:10 +0900
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ninjawanko@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ninjawanko@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.3ms | Allocations: 461)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 25.7ms | Allocations: 2239)
+  Rendered layout layouts/application.html.erb (Duration: 70.3ms | Allocations: 8818)
+Completed 200 OK in 373ms (Views: 71.1ms | ActiveRecord: 0.3ms | Allocations: 13611)
+
+
+Started POST "/users" for ::1 at 2022-11-29 21:39:10 +0900
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ninjawanko@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ninjawanko@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 461)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2239)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 8994)
+Completed 200 OK in 360ms (Views: 14.8ms | ActiveRecord: 0.3ms | Allocations: 13780)
+
+
+Started POST "/users" for ::1 at 2022-11-29 21:39:11 +0900
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ninjawanko@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ninjawanko@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.3ms | Allocations: 461)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2239)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 8818)
+Completed 200 OK in 312ms (Views: 14.3ms | ActiveRecord: 0.3ms | Allocations: 13576)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-11-29 21:39:14 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 288)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 8.4ms | Allocations: 2478)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 9243)
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 0.0ms | Allocations: 10616)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-11-29 21:39:28 +0900
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ninjawanko@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ninjawanko@example.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 19ms (ActiveRecord: 0.2ms | Allocations: 7120)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-11-29 21:39:37 +0900
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ninjawanko@example.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ninjawanko@example.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.1ms | Allocations: 1512)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-11-29 21:39:39 +0900
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ninjawanko@example.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ninjawanko@example.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.1ms | Allocations: 1410)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-11-29 21:39:40 +0900
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ninjawanko@example.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ninjawanko@example.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.1ms | Allocations: 1425)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-11-29 21:39:40 +0900
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ninjawanko@example.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ninjawanko@example.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.1ms | Allocations: 1443)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-11-29 21:39:40 +0900
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ninjawanko@example.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ninjawanko@example.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.1ms | Allocations: 1419)
+
+
+Started GET "/" for ::1 at 2022-11-29 21:39:47 +0900
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 365)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 7149)
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.0ms | Allocations: 7450)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-11-29 21:39:50 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1250)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 7837)
+Completed 200 OK in 27ms (Views: 22.7ms | ActiveRecord: 0.0ms | Allocations: 8394)
+
+
+Started POST "/users" for ::1 at 2022-11-29 21:40:00 +0900
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ninjawanko@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ninjawanko@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (8.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "ninjawanko@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-29 12:40:00.729279"], ["updated_at", "2022-11-29 12:40:00.729279"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 319ms (ActiveRecord: 9.7ms | Allocations: 12056)
+
+
+  
+NoMethodError (undefined method `user_url' for #<Devise::RegistrationsController:0x0000000000cb70>
+
+              recipient.public_send(method, *args)
+                       ^^^^^^^^^^^^):
+  
+actionpack (7.0.4) lib/action_dispatch/routing/polymorphic_routes.rb:231:in `public_send'
+actionpack (7.0.4) lib/action_dispatch/routing/polymorphic_routes.rb:231:in `polymorphic_method'
+actionpack (7.0.4) lib/action_dispatch/routing/polymorphic_routes.rb:116:in `polymorphic_url'
+actionpack (7.0.4) lib/action_dispatch/routing/url_for.rb:187:in `full_url_for'
+actionpack (7.0.4) lib/action_dispatch/routing/url_for.rb:170:in `url_for'
+actionpack (7.0.4) lib/action_controller/metal/redirecting.rb:144:in `_compute_redirect_to_location'
+actionpack (7.0.4) lib/action_controller/metal/redirecting.rb:89:in `redirect_to'
+actionpack (7.0.4) lib/action_controller/metal/flash.rb:62:in `redirect_to'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:42:in `block in redirect_to'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:41:in `redirect_to'
+responders (3.0.1) lib/action_controller/responder.rb:147:in `redirect_to'
+responders (3.0.1) lib/action_controller/responder.rb:207:in `navigation_behavior'
+responders (3.0.1) lib/action_controller/responder.rb:174:in `rescue in to_html'
+responders (3.0.1) lib/action_controller/responder.rb:171:in `to_html'
+responders (3.0.1) lib/action_controller/responder.rb:165:in `respond'
+responders (3.0.1) lib/action_controller/responder.rb:158:in `call'
+responders (3.0.1) lib/action_controller/respond_with.rb:213:in `respond_with'
+devise (4.8.1) app/controllers/devise/registrations_controller.rb:25:in `create'
+actionpack (7.0.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rendering.rb:53:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.4) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+actiontext (7.0.4) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/sign_up" for ::1 at 2022-11-29 21:42:51 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 15)
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 79)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 12.2ms | Allocations: 1312)
+  Rendered layout layouts/application.html.erb (Duration: 44.8ms | Allocations: 8193)
+Completed 200 OK in 64ms (Views: 50.2ms | ActiveRecord: 0.0ms | Allocations: 8860)
+
+
+Started POST "/users" for ::1 at 2022-11-29 21:43:03 +0900
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ninjawanko@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ninjawanko@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.7ms | Allocations: 518)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2283)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 9054)
+Completed 200 OK in 322ms (Views: 17.3ms | ActiveRecord: 0.8ms | Allocations: 14016)
+
+
+Started POST "/users" for ::1 at 2022-11-29 21:43:05 +0900
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ninjawanko@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ninjawanko@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.8ms | Allocations: 454)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2218)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 8797)
+Completed 200 OK in 312ms (Views: 15.3ms | ActiveRecord: 0.3ms | Allocations: 13565)
+
+
+Started POST "/users" for ::1 at 2022-11-29 21:43:07 +0900
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ninjawanko@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ninjawanko@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.6ms | Allocations: 454)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2218)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 8797)
+Completed 200 OK in 312ms (Views: 15.0ms | ActiveRecord: 0.3ms | Allocations: 13577)
+
+
+Started POST "/users" for ::1 at 2022-11-29 21:43:12 +0900
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ninjawanko@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ninjawanko@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.7ms | Allocations: 454)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2218)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 8797)
+Completed 200 OK in 358ms (Views: 15.1ms | ActiveRecord: 0.3ms | Allocations: 13557)
+
+
+Started POST "/users" for ::1 at 2022-11-29 21:43:13 +0900
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ninjawanko@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ninjawanko@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.8ms | Allocations: 454)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2218)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 8797)
+Completed 200 OK in 313ms (Views: 15.6ms | ActiveRecord: 0.3ms | Allocations: 13590)
+
+
+Started POST "/users" for ::1 at 2022-11-29 21:43:25 +0900
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ninjawanko@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ninjawanko@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 454)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2221)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 8992)
+Completed 200 OK in 317ms (Views: 16.5ms | ActiveRecord: 1.7ms | Allocations: 13770)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-11-29 21:43:35 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1226)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 7890)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 8524)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-11-29 21:43:41 +0900
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ninjawanko@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ninjawanko@example.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 301ms (ActiveRecord: 0.4ms | Allocations: 2522)
+
+
+Started GET "/" for ::1 at 2022-11-29 21:43:41 +0900
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:3
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1064)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 7852)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.2ms | Allocations: 8160)
+
+
