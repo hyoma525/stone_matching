@@ -1,10 +1,21 @@
 Rails.application.routes.draw do
+  devise_for :admins, controllers: {
+    sessions:      'admins/sessions',
+    passwords:     'admins/passwords',
+    registrations: 'admins/registrations'
+  }
+  devise_for :users, controllers: {
+    sessions:      'users/sessions',
+    passwords:     'users/passwords',
+    registritions: 'users/registrations'
+  }
+  
   get 'diagnoses/new'
   get 'diagnoses/index'
   resources :power_stones
   root 'power_stones#index'
   get 'posts/index'
-  devise_for :users
+  
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

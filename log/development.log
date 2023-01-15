@@ -5589,3 +5589,159 @@ FOREIGN KEY ("category_id")
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "color", "effect", "price", "rare", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "希少レベル★★★"], ["color", nil], ["effect", nil], ["price", nil], ["rare", nil], ["created_at", "2023-01-15 07:09:46.281903"], ["updated_at", "2023-01-15 07:09:46.281903"]]
   [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2280209536901246055)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateAdmins (20230115110757)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE "admins" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_email" ON "admins" ("email")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_reset_password_token" ON "admins" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230115110757"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2280209536901246055)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2023-01-15 20:21:54 +0900
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PowerStonesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering power_stones/index.html.erb within layouts/application
+  [1m[36mPowerStone Load (12.9ms)[0m  [1m[34mSELECT "power_stones".* FROM "power_stones"[0m
+  ↳ app/views/power_stones/index.html.erb:12
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 32)
+  Rendered power_stones/index.html.erb within layouts/application (Duration: 24.2ms | Allocations: 2007)
+  Rendered layout layouts/application.html.erb (Duration: 178.7ms | Allocations: 54660)
+Completed 200 OK in 215ms (Views: 173.8ms | ActiveRecord: 12.9ms | Allocations: 61113)
+
+
+Started GET "/admin" for ::1 at 2023-01-15 20:22:06 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/admin"):
+  
+Started GET "/admin/login" for ::1 at 2023-01-15 20:22:19 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/admin/login"):
+  
+Started GET "/admins/session/new" for ::1 at 2023-01-15 20:23:09 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/admins/session/new"):
+  
+Started GET "/admins/sign_in" for ::1 at 2023-01-15 20:23:44 +0900
+Processing by Admins::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (Duration: 2.9ms | Allocations: 725)
+  Rendered admins/sessions/new.html.erb within layouts/application (Duration: 27.4ms | Allocations: 5037)
+  Rendered layout layouts/application.html.erb (Duration: 46.8ms | Allocations: 12021)
+Completed 200 OK in 97ms (Views: 51.1ms | ActiveRecord: 8.2ms | Allocations: 19357)
+
+
+Started GET "/admins/sign_in" for ::1 at 2023-01-15 20:35:17 +0900
+  [1m[36mActiveRecord::SchemaMigration Pluck (36.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admins::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (Duration: 2.1ms | Allocations: 736)
+  Rendered admins/sessions/new.html.erb within layouts/application (Duration: 23.4ms | Allocations: 5473)
+  Rendered layout layouts/application.html.erb (Duration: 148.5ms | Allocations: 58170)
+Completed 200 OK in 192ms (Views: 158.1ms | ActiveRecord: 5.1ms | Allocations: 68829)
+
+
+Started GET "/admins/sign_up" for ::1 at 2023-01-15 20:35:48 +0900
+Processing by Admins::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admins/registrations/new.html.erb within layouts/application
+  Rendered admins/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 217)
+  Rendered admins/shared/_links.html.erb (Duration: 0.4ms | Allocations: 153)
+  Rendered admins/registrations/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 2208)
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 8998)
+Completed 200 OK in 27ms (Views: 24.7ms | ActiveRecord: 0.0ms | Allocations: 10426)
+
+
+Started POST "/admins" for ::1 at 2023-01-15 20:36:04 +0900
+Processing by Admins::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"12345@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdmin Exists? (7.7ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = $1 LIMIT $2[0m  [["email", "12345@gmail.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (2.3ms)[0m  [1m[32mINSERT INTO "admins" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "12345@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-01-15 11:36:05.150577"], ["updated_at", "2023-01-15 11:36:05.150577"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 383ms (ActiveRecord: 12.3ms | Allocations: 10641)
+
+
+Started GET "/" for ::1 at 2023-01-15 20:36:05 +0900
+Processing by PowerStonesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering power_stones/index.html.erb within layouts/application
+  [1m[36mPowerStone Load (0.7ms)[0m  [1m[34mSELECT "power_stones".* FROM "power_stones"[0m
+  ↳ app/views/power_stones/index.html.erb:12
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 31)
+  Rendered power_stones/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1544)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 8358)
+Completed 200 OK in 29ms (Views: 17.8ms | ActiveRecord: 0.7ms | Allocations: 10886)
+
+
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (114.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "MyApp_development"[0m
+  [1m[35m (59.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "MyApp_test"[0m
+  [1m[35m (206.2ms)[0m  [1m[35mCREATE DATABASE "MyApp_development" ENCODING = 'utf8'[0m
+  [1m[35m (91.5ms)[0m  [1m[35mCREATE DATABASE "MyApp_test" ENCODING = 'utf8'[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2280209536901246055)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20221025124856)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221025124856"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNameToUsers (20221130100112)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "name" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221130100112"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePowerStones (20230109124740)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "power_stones" ("id" bigserial primary key, "name" character varying, "overview" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230109124740"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategories (20230109125149)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "color" character varying, "effect" character varying, "price" character varying, "rare" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230109125149"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateStoneCategories (20230110125532)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "stone_categories" ("id" bigserial primary key, "power_stone_id" bigint NOT NULL, "category_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_beb86546ff"
+FOREIGN KEY ("power_stone_id")
+  REFERENCES "power_stones" ("id")
+, CONSTRAINT "fk_rails_4125b1cd2c"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE INDEX "index_stone_categories_on_power_stone_id" ON "stone_categories" ("power_stone_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_stone_categories_on_category_id" ON "stone_categories" ("category_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230110125532"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateAdmins (20230115110757)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "admins" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_email" ON "admins" ("email")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_reset_password_token" ON "admins" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230115110757"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-01-15 11:48:39.345429"], ["updated_at", "2023-01-15 11:48:39.345429"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(2280209536901246055)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
