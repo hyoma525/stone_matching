@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root 'posts#index'
+  get 'diagnoses/new'
+  get 'diagnoses/index'
+  resources :power_stones
+  root 'power_stones#index'
   get 'posts/index'
   devise_for :users
 

@@ -1,0 +1,2 @@
+module PowerStonesHelper
+end
