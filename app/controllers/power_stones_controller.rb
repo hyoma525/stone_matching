@@ -25,11 +25,9 @@ class PowerStonesController < ApplicationController
 
     respond_to do |format|
       if @power_stone.save
-        format.html { redirect_to power_stone_url(@power_stone), notice: "Power stone was successfully created." }
-        format.json { render :show, status: :created, location: @power_stone }
+        redirect_to power_stone_url(@power_stone), notice: "Power stone was successfully created." 
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @power_stone.errors, status: :unprocessable_entity }
+        render :new, status: :unprocessable_entity
       end
     end
   end
@@ -38,11 +36,9 @@ class PowerStonesController < ApplicationController
   def update
     respond_to do |format|
       if @power_stone.update(power_stone_params)
-        format.html { redirect_to power_stone_url(@power_stone), notice: "Power stone was successfully updated." }
-        format.json { render :show, status: :ok, location: @power_stone }
+        redirect_to power_stone_url(@power_stone), notice: "Power stone was successfully updated." 
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @power_stone.errors, status: :unprocessable_entity }
+        render :edit, status: :unprocessable_entity
       end
     end
   end
@@ -52,8 +48,7 @@ class PowerStonesController < ApplicationController
     @power_stone.destroy
 
     respond_to do |format|
-      format.html { redirect_to power_stones_url, notice: "Power stone was successfully destroyed." }
-      format.json { head :no_content }
+      redirect_to power_stones_url, notice: "Power stone was successfully destroyed." 
     end
   end
 

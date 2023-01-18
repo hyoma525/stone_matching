@@ -78,3 +78,8 @@ group :test do
   gem "webdrivers"
 end
 gem 'devise'
+
+gem 'cssbundling-rails'
+
+gem 'devise-i18n'
+gem "rails-i18n", "~> 7.0"
