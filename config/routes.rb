@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'diagnoses/new'
   get 'diagnoses/index'
   resources :power_stones
-  root 'power_stones#index'
+  root 'tops#index'
   get 'posts/index'
   
 
