@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     passwords:     'users/passwords',
     registritions: 'users/registrations'
   }
-  
+  resources :users, only: [:show]
   get 'diagnoses/new'
   get 'diagnoses/index'
   resources :power_stones

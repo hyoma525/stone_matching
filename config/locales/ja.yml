@@ -8,9 +8,16 @@ ja:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
     models:
-      user: 会員
+      user: ユーザー
+      admin: 管理者
     attributes:
       user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード（確認）
+      admin:
+        name: 名前
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード（確認）
