@@ -9,7 +9,6 @@
   {title: "希少なものが欲しい？", number: 3},
 ] %>
 <% question_id = Category.first.id %>
-
 <%= form_tag diagnoses_index_path, method: :get do %>
   <% questions.each do |q| %>
     <div class="question-container">
