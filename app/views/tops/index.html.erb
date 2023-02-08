@@ -1,22 +1,19 @@
     <section class="min-h-96 flex justify-center items-center flex-1 shrink-0 bg-gray-100 overflow-hidden shadow-lg rounded-lg relative py-16 md:py-20 xl:py-48">
       <!-- image - start -->
-      <img src="https://images.unsplash.com/photo-1618004652321-13a63e576b80?auto=format&q=75&fit=crop&w=1500" loading="lazy" alt="Photo by Fakurian Design" class="w-full h-full object-cover object-center absolute inset-0" />
+      <!--img src="assets/images/25010926_s.jpg" alt="Photo by Fakurian Design" class="w-full h-full object-cover object-center absolute inset-0"-->
       <!-- image - end -->
-
       <!-- overlay - start -->
-      <div class="bg-indigo-500 mix-blend-multiply absolute inset-0"></div>
+      <%= image_tag "top.jpg",alt: "トップ画像", class: "w-full h-full object-cover object-center absolute inset-0" %>
       <!-- overlay - end -->
 
       <!-- text start -->
       <div class="sm:max-w-xl flex flex-col items-center relative p-4">
-        <p class="text-indigo-200 text-lg sm:text-xl text-center mb-4 md:mb-8">パワーストーン診断アプリ</p>
-        <h1 class="text-white text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-8 md:mb-12">Revolutionary way to build the web</h1>
+        <p class="text-green-400 text-lg sm:text-xl text-center mb-4 md:mb-8">パワーストーン診断アプリ</p>
+        <h1 class="text-blue-400 text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-8 md:mb-12">StoneMatching</h1>
 
         <div class="w-full flex flex-col sm:flex-row sm:justify-center gap-2.5">
         <%= link_to "診断する", diagnoses_new_path, class: "inline-block bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 focus-visible:ring ring-indigo-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3" %>
 
       <!-- text end -->
     </section>
-  </div>
-</div>
 <!-- hero - end -->
