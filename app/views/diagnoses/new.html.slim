@@ -1,0 +1,29 @@
+
+div
+  h1.text-2xl.text-center
+    | 診断開始
+  br
+  br
+  body.text-center
+  - categories = Category.select(&:name)
+  - questions = [{title: "好きな色は？", number: 6},{title: "パワーストーンに求める効果は？", number: 7},{title: "高価な石が欲しい？", number: 3},{title: "希少なものが欲しい？", number: 3},]
+  - question_id = Category.first.id
+  = form_tag diagnoses_index_path, method: :get do
+    - questions.each do |q|
+      .question-container
+      main.text-1xl.text-left.my-3.inline-block
+        = q[:title]
+        - categories.shift(q[:number]).each do |t|
+          |  <input type="checkbox" id="checkbox
+          = question_id
+          | " name="answer[]" value="
+          = question_id
+          | " > <label for="checkbox
+          = question_id
+          | ">
+          = t.name
+          - question_id += 1
+    br
+    br
+    .text-white.inline-block.rounded-lg.outline-none.bg-indigo-500.hover:bg-indigo-600 
+      = submit_tag "診断する"
