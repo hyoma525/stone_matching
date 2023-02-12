@@ -10,7 +10,7 @@ div
   - question_id = Category.first.id
   = form_tag diagnoses_index_path, method: :get do
     - questions.each do |q|
-      .question-container
+      .question-container.my-5
       main.text-1xl.text-left.my-3.inline-block
         = q[:title]
         - categories.shift(q[:number]).each do |t|
@@ -25,5 +25,5 @@ div
           - question_id += 1
     br
     br
-    .text-white.inline-block.rounded-lg.outline-none.bg-indigo-500.hover:bg-indigo-600 
+    .text-white.inline-block.rounded-lg.outline-none.bg-indigo-500.hover:bg-indigo-600
       = submit_tag "診断する"
