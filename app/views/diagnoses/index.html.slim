@@ -11,14 +11,15 @@ div
   - @matched_power_stones.each do |power_stone|
     .power_stone-container
     br
-      |  パワーストーン名:
-      = power_stone.name
-      br
-      br
-      |  説明:
-      = power_stone.overview
-      br
-      br
+    |  パワーストーン名:
+    = power_stone.name
+    br
+    br
+    |  説明:
+    = power_stone.overview
+    br
+    = image_tag power_stone.power_stone_image.url, id: 'preview', size: '400x400', class: "mx-auto"
+    br
       /|  タグ: 
       /- power_stone.categories.each do |category|
         = category.name
