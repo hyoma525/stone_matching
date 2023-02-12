@@ -34,22 +34,17 @@ class PowerStonesController < ApplicationController
 
   # PATCH/PUT /power_stones/1 or /power_stones/1.json
   def update
-    respond_to do |format|
-      if @power_stone.update(power_stone_params)
-        redirect_to power_stone_url(@power_stone), notice: "Power stone was successfully updated." 
-      else
-        render :edit, status: :unprocessable_entity
-      end
+    if @power_stone.update(power_stone_params)
+      redirect_to power_stone_url(@power_stone), notice: "Power stone was successfully updated." 
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
   # DELETE /power_stones/1 or /power_stones/1.json
   def destroy
     @power_stone.destroy
-
-    respond_to do |format|
-      redirect_to power_stones_url, notice: "Power stone was successfully destroyed." 
-    end
+    redirect_to power_stones_url, notice: "Power stone was successfully destroyed." 
   end
 
   private
@@ -60,6 +55,6 @@ class PowerStonesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def power_stone_params
-      params.require(:power_stone).permit(:name, :overview, category_ids: [])
+      params.require(:power_stone).permit(:name, :overview, :power_stone_image,  :power_stone_image_cache, category_ids: [])
     end
 end

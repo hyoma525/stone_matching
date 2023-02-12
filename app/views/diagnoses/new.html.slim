@@ -6,7 +6,7 @@ div
   br
   body.text-center
   - categories = Category.select(&:name)
-  - questions = [{title: "好きな色は？", number: 6},{title: "パワーストーンに求める効果は？", number: 7},{title: "高価な石が欲しい？", number: 3},{title: "希少なものが欲しい？", number: 3},]
+  - questions = [{title: "好きな色は？", number: 7},{title: "パワーストーンに求める効果は？", number: 7},{title: "高価な石が欲しい？", number: 3},{title: "希少なものが欲しい？", number: 3},{title: "石の透明度は？", number: 2}]
   - question_id = Category.first.id
   = form_tag diagnoses_index_path, method: :get do
     - questions.each do |q|
