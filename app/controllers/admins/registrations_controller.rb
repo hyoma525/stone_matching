@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class Admins::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
+  before_action :move_to_root, only: %i[ new show index update destroy]
+  before_action :authenticate_admin!, only: %i[ new ]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
@@ -59,4 +60,11 @@ class Admins::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+  private
+  
+  def move_to_root
+    unless admin_signed_in?
+      redirect_to root_path
+    end
+  end
 end

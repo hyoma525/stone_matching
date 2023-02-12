@@ -1,6 +1,7 @@
 class PowerStonesController < ApplicationController
   before_action :set_power_stone, only: %i[ show edit update destroy ]
-  before_action :authenticate_admin!, only: %i[ new ] 
+  before_action :move_to_root, only: %i[ new show index update destroy] 
+  before_action :authenticate_admin!, only: %i[ new show index update destroy] 
   # GET /power_stones or /power_stones.json
   def index
     @power_stones = PowerStone.all
@@ -56,5 +57,11 @@ class PowerStonesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def power_stone_params
       params.require(:power_stone).permit(:name, :overview, :power_stone_image,  :power_stone_image_cache, category_ids: [])
+    end
+
+    def move_to_root
+      unless admin_signed_in?
+        redirect_to root_path
+      end
     end
 end
