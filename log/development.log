@@ -53606,3 +53606,250 @@ Processing by TopsController#index as HTML
 Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.0ms | Allocations: 9594)
 
 
+Started GET "/" for ::1 at 2023-02-12 21:04:25 +0900
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TopsController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (Duration: 167.6ms | Allocations: 33983)
+  Rendered layout layouts/application.html.slim (Duration: 299.5ms | Allocations: 73548)
+Completed 200 OK in 325ms (Views: 308.9ms | ActiveRecord: 0.0ms | Allocations: 77986)
+
+
+Started GET "/diagnoses/new" for ::1 at 2023-02-12 21:04:33 +0900
+Processing by DiagnosesController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering diagnoses/new.html.slim within layouts/application
+  [1m[36mCategory Load (3.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/diagnoses/new.html.slim:8
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/diagnoses/new.html.slim:10
+  Rendered diagnoses/new.html.slim within layouts/application (Duration: 96.2ms | Allocations: 16824)
+  Rendered layout layouts/application.html.slim (Duration: 141.1ms | Allocations: 24871)
+Completed 200 OK in 145ms (Views: 131.3ms | ActiveRecord: 12.7ms | Allocations: 25606)
+
+
+Started GET "/" for ::1 at 2023-02-12 21:04:35 +0900
+Processing by TopsController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 717)
+  Rendered layout layouts/application.html.slim (Duration: 25.0ms | Allocations: 8202)
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.0ms | Allocations: 8512)
+
+
+Started GET "/" for ::1 at 2023-02-12 21:04:38 +0900
+Processing by TopsController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 712)
+  Rendered layout layouts/application.html.slim (Duration: 15.4ms | Allocations: 8186)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 8454)
+
+
+Started GET "/diagnoses/new" for ::1 at 2023-02-12 21:04:40 +0900
+Processing by DiagnosesController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering diagnoses/new.html.slim within layouts/application
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/diagnoses/new.html.slim:8
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/diagnoses/new.html.slim:10
+  Rendered diagnoses/new.html.slim within layouts/application (Duration: 8.4ms | Allocations: 1745)
+  Rendered layout layouts/application.html.slim (Duration: 27.0ms | Allocations: 9429)
+Completed 200 OK in 29ms (Views: 26.4ms | ActiveRecord: 1.6ms | Allocations: 9696)
+
+
+Started GET "/" for ::1 at 2023-02-12 21:04:43 +0900
+Processing by TopsController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 712)
+  Rendered layout layouts/application.html.slim (Duration: 23.4ms | Allocations: 8166)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 0.0ms | Allocations: 8430)
+
+
+Started GET "/diagnoses/new" for ::1 at 2023-02-12 21:04:47 +0900
+Processing by DiagnosesController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering diagnoses/new.html.slim within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/diagnoses/new.html.slim:8
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/diagnoses/new.html.slim:10
+  Rendered diagnoses/new.html.slim within layouts/application (Duration: 6.8ms | Allocations: 1729)
+  Rendered layout layouts/application.html.slim (Duration: 29.4ms | Allocations: 9330)
+Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 1.1ms | Allocations: 9595)
+
+
+Started GET "/diagnoses/index?answer%5B%5D=1&answer%5B%5D=8&answer%5B%5D=16&answer%5B%5D=19&answer%5B%5D=21&commit=%E8%A8%BA%E6%96%AD%E3%81%99%E3%82%8B" for ::1 at 2023-02-12 21:04:55 +0900
+Processing by DiagnosesController#index as HTML
+  Parameters: {"answer"=>["1", "8", "16", "19", "21"], "commit"=>"診断する"}
+  [1m[36mPowerStone Load (0.6ms)[0m  [1m[34mSELECT "power_stones".* FROM "power_stones"[0m
+  ↳ app/controllers/diagnoses_controller.rb:12:in `index'
+  [1m[36mCategory Load (2.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "stone_categories" ON "categories"."id" = "stone_categories"."category_id" WHERE "stone_categories"."power_stone_id" = $1[0m  [["power_stone_id", 1]]
+  ↳ app/controllers/diagnoses_controller.rb:14:in `block in index'
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "stone_categories" ON "categories"."id" = "stone_categories"."category_id" WHERE "stone_categories"."power_stone_id" = $1[0m  [["power_stone_id", 2]]
+  ↳ app/controllers/diagnoses_controller.rb:14:in `block in index'
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "stone_categories" ON "categories"."id" = "stone_categories"."category_id" WHERE "stone_categories"."power_stone_id" = $1[0m  [["power_stone_id", 3]]
+  ↳ app/controllers/diagnoses_controller.rb:14:in `block in index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "stone_categories" ON "categories"."id" = "stone_categories"."category_id" WHERE "stone_categories"."power_stone_id" = $1[0m  [["power_stone_id", 4]]
+  ↳ app/controllers/diagnoses_controller.rb:14:in `block in index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "stone_categories" ON "categories"."id" = "stone_categories"."category_id" WHERE "stone_categories"."power_stone_id" = $1[0m  [["power_stone_id", 5]]
+  ↳ app/controllers/diagnoses_controller.rb:14:in `block in index'
+  Rendering layout layouts/application.html.slim
+  Rendering diagnoses/index.html.slim within layouts/application
+  Rendered diagnoses/index.html.slim within layouts/application (Duration: 12.2ms | Allocations: 7821)
+  Rendered layout layouts/application.html.slim (Duration: 24.7ms | Allocations: 15777)
+Completed 200 OK in 114ms (Views: 25.2ms | ActiveRecord: 9.0ms | Allocations: 39995)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-12 21:05:15 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering devise/registrations/new.html.slim within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 261)
+  Rendered devise/registrations/new.html.slim within layouts/application (Duration: 44.2ms | Allocations: 12135)
+  Rendered layout layouts/application.html.slim (Duration: 57.1ms | Allocations: 19972)
+Completed 200 OK in 77ms (Views: 60.5ms | ActiveRecord: 3.0ms | Allocations: 26165)
+
+
+Started GET "/" for ::1 at 2023-02-12 21:05:16 +0900
+Processing by TopsController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 716)
+  Rendered layout layouts/application.html.slim (Duration: 15.6ms | Allocations: 8227)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.0ms | Allocations: 8532)
+
+
+Started GET "/diagnoses/new" for ::1 at 2023-02-12 21:05:17 +0900
+Processing by DiagnosesController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering diagnoses/new.html.slim within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/diagnoses/new.html.slim:8
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/diagnoses/new.html.slim:10
+  Rendered diagnoses/new.html.slim within layouts/application (Duration: 6.1ms | Allocations: 1848)
+  Rendered layout layouts/application.html.slim (Duration: 21.8ms | Allocations: 9434)
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.8ms | Allocations: 9700)
+
+
+Started GET "/diagnoses/index?answer%5B%5D=2&answer%5B%5D=8&answer%5B%5D=15&answer%5B%5D=18&answer%5B%5D=21&commit=%E8%A8%BA%E6%96%AD%E3%81%99%E3%82%8B" for ::1 at 2023-02-12 21:05:24 +0900
+Processing by DiagnosesController#index as HTML
+  Parameters: {"answer"=>["2", "8", "15", "18", "21"], "commit"=>"診断する"}
+  [1m[36mPowerStone Load (0.3ms)[0m  [1m[34mSELECT "power_stones".* FROM "power_stones"[0m
+  ↳ app/controllers/diagnoses_controller.rb:12:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "stone_categories" ON "categories"."id" = "stone_categories"."category_id" WHERE "stone_categories"."power_stone_id" = $1[0m  [["power_stone_id", 1]]
+  ↳ app/controllers/diagnoses_controller.rb:14:in `block in index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "stone_categories" ON "categories"."id" = "stone_categories"."category_id" WHERE "stone_categories"."power_stone_id" = $1[0m  [["power_stone_id", 2]]
+  ↳ app/controllers/diagnoses_controller.rb:14:in `block in index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "stone_categories" ON "categories"."id" = "stone_categories"."category_id" WHERE "stone_categories"."power_stone_id" = $1[0m  [["power_stone_id", 3]]
+  ↳ app/controllers/diagnoses_controller.rb:14:in `block in index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "stone_categories" ON "categories"."id" = "stone_categories"."category_id" WHERE "stone_categories"."power_stone_id" = $1[0m  [["power_stone_id", 4]]
+  ↳ app/controllers/diagnoses_controller.rb:14:in `block in index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "stone_categories" ON "categories"."id" = "stone_categories"."category_id" WHERE "stone_categories"."power_stone_id" = $1[0m  [["power_stone_id", 5]]
+  ↳ app/controllers/diagnoses_controller.rb:14:in `block in index'
+  Rendering layout layouts/application.html.slim
+  Rendering diagnoses/index.html.slim within layouts/application
+  Rendered diagnoses/index.html.slim within layouts/application (Duration: 0.5ms | Allocations: 263)
+  Rendered layout layouts/application.html.slim (Duration: 19.3ms | Allocations: 7855)
+Completed 200 OK in 31ms (Views: 19.9ms | ActiveRecord: 1.8ms | Allocations: 13224)
+
+
+Started GET "/" for ::1 at 2023-02-12 21:05:36 +0900
+Processing by TopsController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 716)
+  Rendered layout layouts/application.html.slim (Duration: 35.0ms | Allocations: 8244)
+Completed 200 OK in 39ms (Views: 35.8ms | ActiveRecord: 0.0ms | Allocations: 8508)
+
+
+Started GET "/diagnoses/new" for ::1 at 2023-02-12 21:05:37 +0900
+Processing by DiagnosesController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering diagnoses/new.html.slim within layouts/application
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/diagnoses/new.html.slim:8
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/diagnoses/new.html.slim:10
+  Rendered diagnoses/new.html.slim within layouts/application (Duration: 6.8ms | Allocations: 1729)
+  Rendered layout layouts/application.html.slim (Duration: 29.7ms | Allocations: 9518)
+Completed 200 OK in 31ms (Views: 29.3ms | ActiveRecord: 1.1ms | Allocations: 9784)
+
+
+Started GET "/diagnoses/index?answer%5B%5D=6&answer%5B%5D=8&answer%5B%5D=15&answer%5B%5D=19&answer%5B%5D=20&answer%5B%5D=21&commit=%E8%A8%BA%E6%96%AD%E3%81%99%E3%82%8B" for ::1 at 2023-02-12 21:06:34 +0900
+Processing by DiagnosesController#index as HTML
+  Parameters: {"answer"=>["6", "8", "15", "19", "20", "21"], "commit"=>"診断する"}
+  [1m[36mPowerStone Load (0.5ms)[0m  [1m[34mSELECT "power_stones".* FROM "power_stones"[0m
+  ↳ app/controllers/diagnoses_controller.rb:12:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "stone_categories" ON "categories"."id" = "stone_categories"."category_id" WHERE "stone_categories"."power_stone_id" = $1[0m  [["power_stone_id", 1]]
+  ↳ app/controllers/diagnoses_controller.rb:14:in `block in index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "stone_categories" ON "categories"."id" = "stone_categories"."category_id" WHERE "stone_categories"."power_stone_id" = $1[0m  [["power_stone_id", 2]]
+  ↳ app/controllers/diagnoses_controller.rb:14:in `block in index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "stone_categories" ON "categories"."id" = "stone_categories"."category_id" WHERE "stone_categories"."power_stone_id" = $1[0m  [["power_stone_id", 3]]
+  ↳ app/controllers/diagnoses_controller.rb:14:in `block in index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "stone_categories" ON "categories"."id" = "stone_categories"."category_id" WHERE "stone_categories"."power_stone_id" = $1[0m  [["power_stone_id", 4]]
+  ↳ app/controllers/diagnoses_controller.rb:14:in `block in index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "stone_categories" ON "categories"."id" = "stone_categories"."category_id" WHERE "stone_categories"."power_stone_id" = $1[0m  [["power_stone_id", 5]]
+  ↳ app/controllers/diagnoses_controller.rb:14:in `block in index'
+  Rendering layout layouts/application.html.slim
+  Rendering diagnoses/index.html.slim within layouts/application
+  Rendered diagnoses/index.html.slim within layouts/application (Duration: 0.6ms | Allocations: 244)
+  Rendered layout layouts/application.html.slim (Duration: 20.8ms | Allocations: 7930)
+Completed 200 OK in 36ms (Views: 21.5ms | ActiveRecord: 2.3ms | Allocations: 13253)
+
+
+Started GET "/diagnoses/new" for ::1 at 2023-02-12 21:07:16 +0900
+Processing by DiagnosesController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering diagnoses/new.html.slim within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/diagnoses/new.html.slim:8
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/diagnoses/new.html.slim:10
+  Rendered diagnoses/new.html.slim within layouts/application (Duration: 5.2ms | Allocations: 1729)
+  Rendered layout layouts/application.html.slim (Duration: 24.7ms | Allocations: 9326)
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.8ms | Allocations: 9591)
+
+
+Started GET "/" for ::1 at 2023-02-12 21:07:18 +0900
+Processing by TopsController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 716)
+  Rendered layout layouts/application.html.slim (Duration: 18.8ms | Allocations: 8175)
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.0ms | Allocations: 8439)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-12 21:07:28 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering devise/registrations/new.html.slim within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered devise/registrations/new.html.slim within layouts/application (Duration: 4.0ms | Allocations: 1280)
+  Rendered layout layouts/application.html.slim (Duration: 21.6ms | Allocations: 8665)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.0ms | Allocations: 9253)
+
+
+Started GET "/" for ::1 at 2023-02-12 21:07:29 +0900
+Processing by TopsController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering tops/index.html.erb within layouts/application
+  Rendered tops/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 717)
+  Rendered layout layouts/application.html.slim (Duration: 17.6ms | Allocations: 8368)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.0ms | Allocations: 8633)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-12 21:07:40 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering devise/registrations/new.html.slim within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered devise/registrations/new.html.slim within layouts/application (Duration: 3.6ms | Allocations: 1243)
+  Rendered layout layouts/application.html.slim (Duration: 19.2ms | Allocations: 8713)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.0ms | Allocations: 9271)
+
+
