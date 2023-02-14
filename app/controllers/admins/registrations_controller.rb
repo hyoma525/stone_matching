@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Admins::RegistrationsController < Devise::RegistrationsController
-  #before_action :move_to_root, only: %i[ new show index update destroy]
+  before_action :move_to_root, only: %i[ new show index update destroy]
   before_action :authenticate_admin!, only: %i[ new ]
   # before_action :configure_account_update_params, only: [:update]
 
