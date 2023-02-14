@@ -21,4 +21,5 @@ test:
 production:
   <<: *default
   adapter: postgresql
-  url: <%= ENV['postgres://mhwolqeobgymqh:4957aeb89ffac14d90cea10815e031648b091487cd75775df3156770a4a8dfa2@ec2-23-20-224-166.compute-1.amazonaws.com'] %> 
+  encoding: unicode
+  pool: 5
