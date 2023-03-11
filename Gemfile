@@ -92,3 +92,5 @@ gem "rails-i18n", "~> 7.0"
 gem "rails-ujs"
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'dotenv-rails'
+gem 'fog-aws'
