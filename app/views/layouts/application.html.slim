@@ -18,8 +18,11 @@ html
               path[d="M96 0V47L48 94H0V47L48 0H96Z"]
             |  StoneMatching 
             =image_tag "kouseki_colorful.png",size: "30x30"
-          
+            = link_to '投稿一覧へ', posts_path
           - if user_signed_in?
+            = link_to '投稿一覧へ', posts_path
+            = link_to '新規投稿へ', new_post_path
+            = link_to 'マイページ', user_path(current_user)
             = link_to 'ログアウト', destroy_user_session_path
           - elsif admin_signed_in?
             = link_to 'パワーストーン新規登録', new_power_stone_path

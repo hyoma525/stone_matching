@@ -7,5 +7,10 @@ p
   | メールアドレス : 
   = @user.email
 p
-  | プロフィール : 
-  = @user.profile
+  | 自分の投稿 : 
+  - @user.posts.each do |post|
+    = post.title 
+    = post.content 
+    = post.picture_id 
+    = post.created_at
+
