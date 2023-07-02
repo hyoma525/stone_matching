@@ -20,4 +20,5 @@ p.small
   = link_to "投稿詳細へ", post, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"
 - if current_user.id == post.user.id
   = link_to '投稿編集へ', edit_post_path(post), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium"
+
   hr.mt-6
