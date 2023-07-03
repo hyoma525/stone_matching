@@ -7,6 +7,8 @@ class User < ApplicationRecord
   validates :email, confirmation: true
   has_many :have_stones, dependent: :destroy
   has_many :have_stones_power_stones, through: :have_stones, source: :power_stone
+  has_many :want_stones, dependent: :destroy
+  has_many :want_stones_power_stones, through: :want_stones, source: :power_stone
   has_many :posts, dependent: :destroy
   
   def have_stone(power_stone)
@@ -21,5 +23,16 @@ class User < ApplicationRecord
     HaveStone.where(user_id: id, power_stone_id: power_stone.id).exists?
   end
 
+  def want_stone(power_stone)
+    want_stones_power_stones << power_stone
+  end
+
+  def unwant_stone(power_stone)
+    want_stones_power_stones.delete(power_stone)
+  end
+
+  def want_stone?(power_stone)
+    WantStone.where(user_id: id, power_stone_id: power_stone.id).exists?
+  end
 
 end

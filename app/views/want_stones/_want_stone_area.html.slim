@@ -1,0 +1,4 @@
+- if current_user.want_stone?(power_stone)
+  = render 'want_stones/unwant_stone', power_stone: power_stone
+- else
+  = render 'want_stones/want_stone', power_stone: power_stone

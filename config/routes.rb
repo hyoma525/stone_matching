@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'want_stones/create'
+  get 'want_stones/destroy'
 
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
@@ -18,7 +20,11 @@ Rails.application.routes.draw do
       collection do
         get :have_stones
       end
-    end
+    resource :want_stones, only: [:create, :destroy]
+      collection do
+        get :want_stones
+      end
+  end
   root 'tops#index'
   get 'posts/index'
 
