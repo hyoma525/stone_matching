@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:     'admins/passwords',
@@ -12,7 +13,12 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   get 'diagnoses/new'
   get 'diagnoses/index'
-  resources :power_stones
+  resources :power_stones, shallow: true do
+    resource :have_stones, only: [:create, :destroy]
+      collection do
+        get :have_stones
+      end
+    end
   root 'tops#index'
   get 'posts/index'
 

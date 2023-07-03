@@ -26,8 +26,10 @@ div
     .text-center.text-white.inline-block.rounded-lg.outline-none.bg-indigo-500.hover:bg-indigo-600
       =link_to "Twitterでシェアする",
       "https://twitter.com/intent/tweet?text=診断結果%0aマッチ度:#{@match_category_count.to_f / params[:answer].length.to_f * 100}%0aパワーストーン名:#{power_stone.name}%0a説明:#{power_stone.overview}",title: 'Twitter', class:'fab fa-twitter', target: '_blank'
+    br
+    - if user_signed_in?
+      = render 'have_stones/have_stone_area', power_stone: power_stone
 br
 div
   .text-center.text-white.inline-block.rounded-lg.outline-none.bg-indigo-500.hover:bg-indigo-600 
     = link_to "もう一度診断する", diagnoses_new_path
-

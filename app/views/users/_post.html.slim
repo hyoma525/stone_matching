@@ -1,0 +1,22 @@
+..w-full
+p.my-5
+  strong.block.font-medium.mb-1
+    | 投稿者:
+  = post.user.name
+p.my-5
+  strong.block.font-medium.mb-1
+    | タイトル:
+  = post.title
+p.my-5
+  strong.block.font-medium.mb-1
+    | 記事:
+  = post.content
+  = image_tag post.picture_id.url, id: 'preview', size: '200x200'
+p.small
+  strong.block.font-medium.mb-1
+    | 投稿日時:
+  = post.created_at
+- if action_name != "show"
+  = link_to "投稿詳細へ", post, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"
+  = link_to '投稿編集へ', edit_post_path(post), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium"
+  hr.mt-6

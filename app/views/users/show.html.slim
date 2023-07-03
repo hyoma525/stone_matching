@@ -15,5 +15,17 @@ p
       = link_to '投稿編集へ', edit_post_path(post), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium"
 
   hr.mt-6
-    
+/p
+  | 所持リスト
+  p
+  - current_user.have_stones.each do |have_stone|
+    = have_stone.name
+    = have_stone.overview 
+    = image_tag have_stone.powee_stone_image.url, id: 'preview', size: '200x200'
+    strong.block.font-medium.mb-1
+    /p
+      = link_to "投稿詳細へ", post, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"
+      = link_to '投稿編集へ', edit_post_path(post), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium"
+
+  hr.mt-6
 
