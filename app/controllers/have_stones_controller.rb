@@ -6,8 +6,10 @@ class HaveStonesController < ApplicationController
   end
 
   def destroy
-    power_stone = current_user.have_stones.find_by(params[:id]).power_stone
+    power_stone = current_user.have_stones.find(params[:id]).power_stone
     current_user.unhave_stone(power_stone)
     redirect_back fallback_location: root_path, success: '所持リストから削除しました'
   end
+
+  
 end

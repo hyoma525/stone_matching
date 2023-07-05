@@ -1,9 +1,8 @@
-div
-
-  h1.font-bold.text-10xl.text-center.text-2xl
+.mx-auto.md:w-2/3.w-full
+  h1.font-bold.text-10xl.item-center.text-2xl
     | 診断結果
   br
-  body.text-center.text-1xl
+  body.text-1xl
     params[:answer]
   |  マッチ度： 
   = @match_category_count.to_f / params[:answer].length.to_f * 100
@@ -14,22 +13,20 @@ div
     |  パワーストーン名:
     = power_stone.name
     br
-    br
+    br.mx-auto.md:w-2/3.w-full
     |  説明:
     = power_stone.overview
     br
-    = image_tag power_stone.power_stone_image.url, id: 'preview', size: '400x400', class: "mx-auto"
+    = image_tag power_stone.power_stone_image.url, id: 'preview', size: '300x300', class: "mx-auto"
     br
-      /|  タグ: 
-      /- power_stone.categories.each do |category|
-        = category.name
+    .text.center
+     - if user_signed_in?
+      = render 'power_stones/have_stone_area', power_stone: power_stone
+      = render 'power_stones/want_stone_area', power_stone: power_stone
+    br
     .text-center.text-white.inline-block.rounded-lg.outline-none.bg-indigo-500.hover:bg-indigo-600
       =link_to "Twitterでシェアする",
       "https://twitter.com/intent/tweet?text=診断結果%0aマッチ度:#{@match_category_count.to_f / params[:answer].length.to_f * 100}%0aパワーストーン名:#{power_stone.name}%0a説明:#{power_stone.overview}",title: 'Twitter', class:'fab fa-twitter', target: '_blank'
-    br
-    - if user_signed_in?
-      = render 'have_stones/have_stone_area', power_stone: power_stone
-br
-div
-  .text-center.text-white.inline-block.rounded-lg.outline-none.bg-indigo-500.hover:bg-indigo-600 
-    = link_to "もう一度診断する", diagnoses_new_path
+    .my-5
+    .text-center.text-white.inline-block.rounded-lg.outline-none.bg-indigo-500.hover:bg-indigo-600 
+      = link_to "もう一度診断する", diagnoses_new_path

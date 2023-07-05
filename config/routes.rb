@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'want_stones/create'
-  get 'want_stones/destroy'
 
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
@@ -16,15 +14,15 @@ Rails.application.routes.draw do
   get 'diagnoses/new'
   get 'diagnoses/index'
   resources :power_stones, shallow: true do
-    resource :have_stones, only: [:create, :destroy]
-      collection do
-        get :have_stones
-      end
-    resource :want_stones, only: [:create, :destroy]
-      collection do
-        get :want_stones
-      end
+    collection do
+      get :have_stones
+    end
+    collection do
+      get :want_stones
+    end
   end
+  resources :have_stones, only: %i[create destroy]
+  resources :want_stones, only: %i[create destroy]
   root 'tops#index'
   get 'posts/index'
 

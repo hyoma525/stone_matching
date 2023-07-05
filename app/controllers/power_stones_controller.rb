@@ -1,5 +1,5 @@
 class PowerStonesController < ApplicationController
-  before_action :set_power_stone, only: %i[ edit update destroy have_stones want_stones]
+  before_action :set_power_stone, only: %i[ edit update destroy]
   before_action :move_to_root, only: %i[ new update destroy] 
   before_action :authenticate_admin!, only: %i[ new update destroy] 
   # GET /power_stones or /power_stones.json
@@ -50,11 +50,11 @@ class PowerStonesController < ApplicationController
   end
 
   def have_stones
-    @have_stone_power_stones = current_user.have_stones.includes(:user).order(created_at: :desc)
+    @have_stone_power_stones = current_user.have_stone_power_stones.includes(:user).order(created_at: :desc)
   end
 
   def want_stones
-    @want_stone_power_stones = current_user.want_stones.includes(:user).order(created_at: :desc)
+    @want_stone_power_stones = current_user.want_stone_power_stones.includes(:user).order(created_at: :desc)
   end
 
 

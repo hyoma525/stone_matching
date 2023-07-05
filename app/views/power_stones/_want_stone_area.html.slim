@@ -1,0 +1,4 @@
+- if current_user.want_stone?(power_stone)
+  = link_to "欲しい石リストから削除", want_stone_path(current_user.want_stones.find_by(power_stone_id: power_stone.id)), data: { turbo_method: :delete }, class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium"
+- else
+  = link_to "欲しい石リストへ", want_stones_path(power_stone_id: power_stone.id), data: { turbo_method: :post }, class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium"

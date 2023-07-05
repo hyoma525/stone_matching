@@ -2,8 +2,8 @@
   "name": "app",
   "private": "true",
   "dependencies": {
-    "autoprefixer": "^10.4.13",
-    "postcss": "^8.4.21"
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24"
   },
   "scripts": {
     "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
@@ -17,7 +17,7 @@
     "test": "test"
   },
   "devDependencies": {
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^3.3.2"
   },
   "repository": {
     "type": "git",

@@ -1,4 +1,4 @@
-..w-full
+.w-full
 p.my-5
   strong.block.font-medium.mb-1
     | 投稿者:
@@ -11,6 +11,8 @@ p.my-5
   strong.block.font-medium.mb-1
     | 記事:
   = post.content
+p.my-5
+  strong.block.font-medium.mb-1
   = image_tag post.picture_id.url, id: 'preview', size: '200x200'
 p.small
   strong.block.font-medium.mb-1
