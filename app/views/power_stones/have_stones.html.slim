@@ -1,0 +1,12 @@
+.container.pt-3
+  | 掲示板一覧
+  .row
+    .col-12
+      .row
+
+      powe_stone = @user.have_stones.select(:have_stone_id)
+        /- if @have_stone_power_stones.present?
+          = render @have_stone_power_stones
+        /- else
+          p= t('.no_result')
+          @have_stone_power_stones

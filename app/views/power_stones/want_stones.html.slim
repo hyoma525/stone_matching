@@ -1,0 +1,17 @@
+- content_for(:title, t('.title'))
+.container.pt-3
+  .row
+    .col-lg-10.offset-lg-1
+      form
+        .input-group.mb-3
+          input.form-control[placeholder="検索ワード" type="search"]
+          .input-group-append
+            input.btn.btn-primary[type="submit" value="検索"]
+  .row
+    .col-12
+      .row
+        - if @want_stone_power_stones.present?
+          = render partial: "power_stone", collection: @want_stone_power_stones
+        - else
+          p
+            | ブックマーク中の掲示板がありません

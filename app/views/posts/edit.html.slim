@@ -1,0 +1,7 @@
+.mx-auto.md:w-2/3.w-full
+  h1.font-bold.text-4xl
+    | 投稿編集
+  = render "form", post: @post
+  = button_to '削除', post_path(@post), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium"
+  = link_to "投稿詳細へ", @post, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"
+  = link_to "投稿一覧へ", posts_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"

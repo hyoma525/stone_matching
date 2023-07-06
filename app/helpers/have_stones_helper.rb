@@ -1,0 +1,2 @@
+module HaveStonesHelper
+end

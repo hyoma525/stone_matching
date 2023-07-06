@@ -1,19 +1,19 @@
-| <div id="
-= dom_id power_stone
-| "> 
-p.my-5
-  strong.block.font-medium.mb-1
-    | 名前:
-  = power_stone.name
-p.my-5
-  strong.block.font-medium.mb-1
-    | 説明:
-  = power_stone.overview
-  = image_tag power_stone.power_stone_image.url, id: 'preview', size: '200x200'
-- power_stone.categories.each do |category|
-  span
-    = category.name
-- if action_name != "show"
-  = link_to "Show this power stone", power_stone, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"
-  = link_to 'Edit this power stone', edit_power_stone_path(power_stone), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium"
+ <div id="= dom_id power_stone "> 
+  p.my-5
+    strong.block.font-medium.mb-1
+      | 名前:
+    = power_stone.name
+  p.my-5
+    strong.block.font-medium.mb-1
+      | 説明:
+    = power_stone.overview
+    = image_tag power_stone.power_stone_image.url, id: 'preview', size: '200x200'
+  /- if action_name != "show"
+  - if admin_signed_in?
+    = link_to "パワーストーン詳細", power_stone, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"
+    = link_to "パワーストーン編集", edit_power_stone_path(power_stone), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium"
+    hr.mt-6
+  - elsif user_signed_in?
+    = render 'have_stone_area', power_stone: power_stone
+    = render 'want_stone_area', power_stone: power_stone
   hr.mt-6
