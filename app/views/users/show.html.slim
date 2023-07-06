@@ -27,9 +27,14 @@
     hr.mt-6
   p.my5
     strong.block.font-medium.mb-1
-    | 所持リスト一覧
+/h1 Power Stones Owned by #{@user.name}
 
-  = link_to 'パワーストーン一覧へ', have_stones_power_stones_path
+/- @power_stones.each do |power_stone|
+  div
+    h3 = power_stone.name
+    p = power_stone.overview
+    // 他のパワーストーンの属性などを表示するコードを追加
+  /= link_to '所持リスト一覧', have_stones_power_stones_path
     /- current_user.have_stones.each do |have_stone|
       = current_user.have_stone.power_stone.name
       /= have_stone.overview 

@@ -3,7 +3,10 @@
   .row
     .col-12
       .row
-        - if @have_stone_power_stones.present?
+
+      powe_stone = @user.have_stones.select(:have_stone_id)
+        /- if @have_stone_power_stones.present?
           = render @have_stone_power_stones
-        - else
+        /- else
           p= t('.no_result')
+          @have_stone_power_stones
