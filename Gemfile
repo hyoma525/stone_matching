@@ -84,6 +84,8 @@ group :production do
 end
 
 gem 'devise'
+gem 'pry-byebug'
+gem 'draper'
 
 gem 'cssbundling-rails'
 gem 'bootstrap'
@@ -95,3 +97,4 @@ gem 'mini_magick'
 gem 'dotenv-rails'
 gem 'fog-aws'
 gem 'font-awesome-sass'
+gem 'jquery-rails'

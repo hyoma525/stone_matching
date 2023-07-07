@@ -2,8 +2,10 @@
   h1.text-2xl
     = @user.name
     | さんのマイページ
-    
-  
+  .my5
+  = link_to '欲しい石登録済みリスト', want_stones_user_path(@user), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium"
+  .my-5 
+  = link_to '所持リスト登録済みへ', have_stones_user_path(@user), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium"
   h1.text-xl
     | 過去の投稿
   p
@@ -26,23 +28,7 @@
       = link_to '投稿編集へ', edit_post_path(post), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium"
     hr.mt-6
   p.my5
-    strong.block.font-medium.mb-1
-/h1 Power Stones Owned by #{@user.name}
 
-/- @power_stones.each do |power_stone|
-  div
-    h3 = power_stone.name
-    p = power_stone.overview
-    // 他のパワーストーンの属性などを表示するコードを追加
-  /= link_to '所持リスト一覧', have_stones_power_stones_path
-    /- current_user.have_stones.each do |have_stone|
-      = current_user.have_stone.power_stone.name
-      /= have_stone.overview 
-      /= image_tag have_stone.powee_stone_image.url, id: 'preview', size: '200x200'
-    /= current_user.have_stones_boards.includes(:user)
-    /p
-      = link_to "投稿詳細へ", post, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"
-      = link_to '投稿編集へ', edit_post_path(post), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium"
 
   hr.mt-6
 
