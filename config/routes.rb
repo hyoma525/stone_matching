@@ -25,7 +25,10 @@ Rails.application.routes.draw do
   resources :want_stones, only: %i[create destroy]
   root 'tops#index'
   get 'posts/index'
-
+  resources :users do
+    get 'want_stones', on: :member
+    get 'have_stones', on: :member
+  end
   resources :posts, only: [:index, :new, :create, :edit, :update, :destroy, :show]
   
 

@@ -1,12 +1,12 @@
 - if post.errors.any?
-    #error_explanation.bg-red-50.text-red-500.px-3.py-2.font-medium.rounded-lg.mt-3
-      h2
-        = pluralize(post.errors.count, "error")
-        |  prohibited this post from being saved:
+  #error_explanation.bg-red-50.text-red-500.px-3.py-2.font-medium.rounded-lg.mt-3
+    h2
+      = pluralize(post.errors.count, "error")
+      |  prohibited this post from being saved:
     ul
       - post.errors.each do |error|
-        li
-          = error.full_message
+      li
+        = error.full_message
 = form_with(model: post, class: "contents") do |form|  
   .my-5
     = form.label :"タイトル"
@@ -18,6 +18,6 @@
     = form.label :"添付画像"
     = form.file_field :"添付画像", class: 'form-control mb-3', accept: 'image/*'
     = form.hidden_field :picture_id_cache
-    /= image_tag post.picture_id.url, id: 'preview', size: '200x200'
+    = image_tag post.picture_id.url, id: 'preview', size: '200x200'
   .inline
     = form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer"

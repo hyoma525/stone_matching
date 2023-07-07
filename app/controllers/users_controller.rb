@@ -7,4 +7,14 @@ class UsersController < ApplicationController
 
   def index
   end
+
+  def want_stones
+    @user = User.find(params[:id])
+    @want_stones = @user.want_stones
+  end
+
+  def have_stones
+    @user = User.find(params[:id])
+    @have_stones = @user.have_stones
+  end
 end

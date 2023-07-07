@@ -1,7 +1,7 @@
 class PowerStonesController < ApplicationController
   before_action :set_power_stone, only: %i[ edit update destroy show have_stones]
   before_action :move_to_root, only: %i[ new update destroy edit] 
-  before_action :authenticate_admin!, only: %i[ new update destroy edit] 
+  before_action :authenticate_admin!, only: %i[ new update destroy edit ] 
   # GET /power_stones or /power_stones.json
   def index
     #@power_stones = PowerStone.all
