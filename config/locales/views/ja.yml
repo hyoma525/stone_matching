@@ -7,6 +7,9 @@ ja:
     new:
       title: 'ユーザー登録'
       to_login_page: 'ログインページへ'
+    create:
+      success: 'ユーザー登録が完了しました'
+      fail: 'ユーザー登録に失敗しました'
   user_sessions:
     new:
       title: 'ログイン'
@@ -15,10 +18,28 @@ ja:
       login: 'ログイン'
       sign_in: '登録'
       logout: 'ログアウト'
+      message:
+        require_login: 'ログインしてください'
+    create:
+      success: 'ログインしました'
+      fail: 'ログインに失敗しました'
+    destroy:
+      success: 'ログアウトしました'
   power_stones:
     index:
       title: '掲示板一覧'
     new:
       title: '掲示板作成'
-    bookmarks:
-      title: 'ブックマーク一覧'
+    have_stones:
+      title: '所持リスト'
+    want_stones:
+      title: '欲しい石リスト'
+  posts:
+    index:
+      title: '投稿一覧'
+      no_result: '投稿がありません。'
+    new:
+      title: '新規投稿'
+  profiles:
+    show:
+      title: 'プロフィール'

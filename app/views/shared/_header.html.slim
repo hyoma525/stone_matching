@@ -16,17 +16,17 @@
             =image_tag "kouseki_colorful.png",size: "30x30"
           .font-bold.py-2.px-4
           - if user_signed_in?
-            = link_to '投稿一覧へ', posts_path
-            = link_to '新規投稿へ', new_post_path
-            = link_to 'パワーストーン一覧へ', power_stones_path
-            = link_to 'マイページ', user_path(current_user)
-            = link_to 'ログアウト', destroy_user_session_path
+            = link_to '投稿一覧へ', posts_path, class: "inline-block bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 focus-visible:ring ring-indigo-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3"
+            = link_to '新規投稿へ', new_post_path, style: "background-color: orange; color: white;", class: "rounded-lg py-3 px-5 inline-block font-medium"
+            = link_to 'パワーストーン一覧へ', power_stones_path, style: "background-color: green; color: white;", class: "rounded-lg py-3 px-5 inline-block font-medium"
+            = link_to 'マイページ', user_path(current_user), style: "background-color: blue; color: white;", class: "rounded-lg py-3 px-5 inline-block font-medium"
+            = link_to 'ログアウト', destroy_user_session_path, style: "background-color: red; color: white;", class: "rounded-lg py-3 px-5 inline-block font-medium"
           - elsif admin_signed_in?
             = link_to '投稿一覧へ', posts_path
             = link_to 'パワーストーン一覧へ', power_stones_path
             = link_to 'パワーストーン新規登録', new_power_stone_path
             = link_to 'ログアウト', destroy_admin_session_path
           - else
-            =link_to 'ユーザー登録', new_user_registration_path
-            =link_to 'ログイン', new_user_session_path
+            =link_to 'ユーザー登録', new_user_registration_path,  style: "background-color: blue; color: white;", class: "rounded-lg py-3 px-5 inline-block font-medium"
+            =link_to 'ログイン', new_user_session_path,  style: "background-color: blue; color: white;", class: "rounded-lg py-3 px-5 inline-block font-medium"
         

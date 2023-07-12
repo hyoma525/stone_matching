@@ -3,9 +3,9 @@
     = @user.name
     | さんのマイページ
   .my5
-  = link_to '欲しい石登録済みリスト', want_stones_user_path(@user), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium"
+  = link_to '欲しい石登録済みリスト', want_stones_user_path(@user), style: "background-color: purple; color: white;", class: "rounded-lg py-3 ml-2 px-5 inline-block font-medium"
   .my-5 
-  = link_to '所持リスト登録済みへ', have_stones_user_path(@user), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium"
+  = link_to '所持リスト登録済みリストへ', have_stones_user_path(@user),style: "background-color: pink; color: white;",  class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium"
   h1.text-xl
     | 過去の投稿
   p
