@@ -3,6 +3,13 @@ html
   head
   body
     = render 'shared/header'
-    = render 'shared/flash_message'
+    - if notice.present?
+      .flex.items-center.justify-center.h-screen
+        p#notice.py-2.px-3.bg-green-50.mb-5.text-green-500.font-medium.rounded-lg.inline-block
+          = notice
+    - if alert.present?
+      .flex.items-center.justify-center.h-screen
+        p#alert.py-2.px-3.bg-red-50.mb-5.text-red-500.font-medium.rounded-lg.inline-block
+          = alert
     = yield
     = render 'shared/footer'

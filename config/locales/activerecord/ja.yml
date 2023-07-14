@@ -9,6 +9,9 @@ ja:
           has_many: "%{record}が存在しているので削除できません"
     models:
       user: ユーザー
+      errors:
+        messages:
+          not_saved: "保存できませんでした。エラーが %{count} 個あります。%{resource}をご確認ください。"
       admin: 管理者
     attributes:
       user:

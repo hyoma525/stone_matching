@@ -1,6 +1,5 @@
 h1 Power Stones Owned by #{@user.name}
 
 - @power_stones.each do |power_stone|
-  div
-    h3 = power_stone.name
-    p = power_stone.overview
+  = power_stone.name
+  = power_stone.overview

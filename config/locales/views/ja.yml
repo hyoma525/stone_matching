@@ -3,6 +3,10 @@ ja:
     login: 'ログイン'
     sign_in: '登録'
     logout: 'ログアウト'
+    message: 
+      require_login: 'ログインしてください'
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成できませんでした"
   users:
     new:
       title: 'ユーザー登録'
@@ -27,7 +31,7 @@ ja:
       success: 'ログアウトしました'
   power_stones:
     index:
-      title: '掲示板一覧'
+      name: '名前'
     new:
       title: '掲示板作成'
     have_stones:

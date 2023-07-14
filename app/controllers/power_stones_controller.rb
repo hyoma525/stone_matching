@@ -1,5 +1,5 @@
 class PowerStonesController < ApplicationController
-  before_action :set_power_stone, only: %i[ edit update destroy show have_stones]
+  before_action :set_power_stone, only: %i[ edit update destroy show have_stones want_stones]
   before_action :move_to_root, only: %i[ new update destroy edit] 
   before_action :authenticate_admin!, only: %i[ new update destroy edit ] 
   # GET /power_stones or /power_stones.json
@@ -24,14 +24,12 @@ class PowerStonesController < ApplicationController
   # POST /power_stones or /power_stones.json
   def create
     @power_stone = PowerStone.new(power_stone_params)
-
-    respond_to do |format|
-      if @power_stone.save
-        redirect_to power_stone_url(@power_stone), notice: "Power stone was successfully created." 
-      else
-        render :new, status: :unprocessable_entity
-      end
+    if @power_stone.save
+      redirect_to power_stone_url(@power_stone), notice: "Power stone was successfully created." 
+    else
+      render :new, status: :unprocessable_entity
     end
+    
   end
 
   # PATCH/PUT /power_stones/1 or /power_stones/1.json

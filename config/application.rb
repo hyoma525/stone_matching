@@ -1,5 +1,7 @@
 require_relative "boot"
-
+require "action_controller/railtie"
+require "action_view/railtie"
+require "action_cable/engine"
 require "rails/all"
 
 # Require the gems listed in Gemfile, including any gems
@@ -23,3 +25,4 @@ module StoneMatching
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
+
