@@ -1,5 +1,13 @@
-h1 ユーザーがwant_stoneに登録しているpower_stone一覧
-
-- @want_stones.each do |want_stone|
-  div
-    h3 = want_stone.power_stone.name
+.mx-auto.md:w-2/3.w-full    
+  h1.font-bold.text-4xl
+    | 欲しい石リスト登録済み一覧
+  - @want_stones.each do |want_stone|
+    p.my-5
+      strong.block.font-medium.mb-1
+        | 名前:
+      = want_stone.power_stone.name
+    p.my-5
+      strong.block.font-medium.mb-1
+        | 説明:
+    = want_stone.power_stone.overview
+    = image_tag want_stone.power_stone.power_stone_image.url, id: 'preview', size: '200x200'

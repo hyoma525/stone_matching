@@ -1,5 +1,15 @@
-h1 ユーザーがhave_stoneに登録しているpower_stone一覧
-
-- @have_stones.each do |have_stone|
-  div
-    h3 = have_stone.power_stone.name
+.mx-auto.md:w-2/3.w-full    
+  h1.font-bold.text-4xl
+    | 所持リスト登録済み一覧
+  - @have_stones.each do |have_stone|
+    p.my-5
+      strong.block.font-medium.mb-1
+        | 名前:
+      = have_stone.power_stone.name
+    p.my-5
+      strong.block.font-medium.mb-1
+        | 説明:
+    = have_stone.power_stone.overview
+    = image_tag have_stone.power_stone.power_stone_image.url, id: 'preview', size: '200x200'
+    /= render 'power_stones/have_stone_area', power_stone: power_stone
+    /= render 'power_stones/want_stone_area', power_stone: power_stone

@@ -1,18 +1,24 @@
-body.text-center
-  | ログイン
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    br
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    br
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "ログイン"
-= render "devise/shared/links"
+.container
+  .row.justify-content-center
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2.text-center
+      h1 ログイン
+      = form_with model: resource, as: resource_name, url: session_path(resource_name) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .field
+          = f.label :email
+          br
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+        .field
+          = f.label :password
+          br
+          = f.password_field :password, autocomplete: "current-password", class: 'form-control'
+        - if devise_mapping.rememberable?
+          .field
+            = f.check_box :remember_me
+            = f.label :remember_me
+        .actions
+          br
+          = f.submit "ログイン", class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer"
+        br
+        = render "devise/shared/links"
+       
